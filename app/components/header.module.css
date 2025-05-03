@@ -1,0 +1,32 @@
+header.app-header {
+    background:var(--grey-color);
+    .wrapper {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+                transition: all 0.3s ease;
+            }
+
+        }
+        ul{
+            display:flex;
+
+            li{
+                margin-left: 20px;
+                font-size: 14px;
+            }
+
+        }
+    }
+}
