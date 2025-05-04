@@ -1,32 +1,145 @@
-header.app-header {
-    background:var(--grey-color);
-    .wrapper {
-        height: 60px;
-        display: flex;
-        justify-content: space-between;
+.appHeader {
+    background: var(--grey-color);
+}
+
+/* Wrapper general */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+/* Logo + text */
+.logoSection {
+    display: flex;
+    align-items: center;
+}
+
+.logoLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logoImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logoImage:hover {
+    transform: scale(1.1);
+}
+
+.siteTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    transform: translateY(-4px);
+    font-style: italic;
+}
+
+/* NAVBAR */
+.navSection {
+    display: flex;
+}
+
+.navList {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navItemLink {
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navItemLink:hover {
+    color: var(--accent-color);
+}
+
+/* Burger button: hidden in desktop */
+.burgerButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger {
+    width: 24px;
+    height: 2px;
+    background: black;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.burger::before,
+.burger::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background: black;
+    transition: all 0.3s ease;
+}
+
+.burger::before {
+    top: -8px;
+}
+
+.burger::after {
+    top: 8px;
+}
+
+.burgerOpen {
+    background: transparent;
+}
+
+.burgerOpen::before {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.burgerOpen::after {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navSection {
+        width: 100%;
+        display: none;
+        flex-direction: column;
         align-items: center;
+    }
 
-        img{
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-left: 20px;
-            margin-right: 20px;
-            cursor: pointer;
-            &:hover{
-                transform: scale(1.1);
-                transition: all 0.3s ease;
-            }
+    .showNav {
+        display: flex;
+    }
 
-        }
-        ul{
-            display:flex;
+    .navList {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
 
-            li{
-                margin-left: 20px;
-                font-size: 14px;
-            }
+    .burgerButton {
+        display: block;
+    }
 
-        }
+    .siteTitle {
+        font-size: 1.2rem;
+        transform: none;
+        font-style: italic;
     }
 }

@@ -1,37 +1,48 @@
-import styles from './header.module.css'
+'use client';
+
+import { useState } from 'react';
+import styles from './header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
 function Header() {
-    return (
+    const [isOpen, setIsOpen] = useState(false);
 
-        <header className={styles['app-header']}>
+    return (
+        <header className={styles.appHeader}>
             <div className={`${styles.wrapper} container`}>
 
-                <aside>
-                    <Link href="/">
+                {/* Logo + Title*/}
+                <div className={styles.logoSection}>
+                    <Link href="/" className={styles.logoLink}>
                         <Image
                             src="/logo.png"
                             alt="Website Logo"
-                            width={150}
-                            height={150}
+                            width={50}
+                            height={50}
+                            className={styles.logoImage}
                         />
+                        <span className={styles.siteTitle}>Speed Fitness</span>
                     </Link>
-                </aside>
+                </div>
 
-                <aside>
-                    <nav>
-                        <ul>
-                            <Link href="/"><li>Home</li></Link>
-                            <Link href="/products"><li>Products</li></Link>
-                            <Link href="/running"><li>Shopping Bag</li></Link>
-                        </ul>
-                    </nav>
-                </aside>
+                {/* Hamburger button on mobile phones */}
+                <button className={styles.burgerButton} onClick={() => setIsOpen(!isOpen)}>
+                    <div className={`${styles.burger} ${isOpen ? styles.burgerOpen : ''}`}></div>
+                </button>
+
+                {/* Navigation menu*/}
+                <nav className={`${styles.navSection} ${isOpen ? styles.showNav : ''}`}>
+                    <ul className={styles.navList}>
+                        <li><Link href="/" className={styles.navItemLink}>Home</Link></li>
+                        <li><Link href="/products" className={styles.navItemLink}>Products</Link></li>
+                        <li><Link href="/running" className={styles.navItemLink}>Shopping Bag</Link></li>
+                    </ul>
+                </nav>
 
             </div>
         </header>
-    )
+    );
 }
 
-export default Header
+export default Header;

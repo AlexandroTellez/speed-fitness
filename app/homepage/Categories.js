@@ -6,9 +6,9 @@ export default function Categories() {
 
             <h2>Our Categories</h2>
             <ul className={`${styles.wrapper} container`}>
-                <li className={styles.category}> Clothes </li>
-                <li className={styles.category}> Shoes </li>
-                <li className={styles.category}> Accessories </li>
+                <li className={styles.category}> Running Apparel </li>
+                <li className={styles.category}> Running Shoes </li>
+                <li className={styles.category}> Running Accessories </li>
             </ul>
 
         </div>
