@@ -1,28 +1,30 @@
 .products {
     margin-bottom: 60px;
+}
 
-    .wrapper {
-        text-align: center;
+.wrapper {
+    text-align: center;
+}
 
-        h2 {
-            margin-bottom: 20px;
-        }
+.wrapper h2 {
+    margin-bottom: 20px;
+}
 
-        p {
-            max-width: 480px;
-            margin: auto;
-            margin-bottom: 40px;
-        }
+.wrapper p {
+    max-width: 480px;
+    margin: auto;
+    margin-bottom: 40px;
+}
 
-        ul.products-list {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
+.products-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+}
 
-        button {
-            margin-top: 40px;
-        }
-    }
+.wrapper button {
+    margin-top: 40px;
 }
